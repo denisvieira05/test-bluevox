@@ -29,7 +29,7 @@
 
        function getPatients(){
             return PatientsService.listar().then(function(data){
-                vm.patients = data;
+                vm.patients = data.items;
                 console.log(vm.patients);
                 return vm.patients;
             },

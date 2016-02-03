@@ -4,9 +4,9 @@
 
         <div class="row">
           <ul class="collection">
-             <li class="collection-item avatar">
-               <img ng-src="{{vm.patients.image_profile}}" alt="" class="circle">
-               <span class="title">{{ vm.patients.name }}</span>
+             <li class="collection-item avatar" ng-repeat="patient in vm.patients">
+               <img ng-src="{{patient.image_profile}}" alt="" class="circle">
+               <span class="title">{{ patient.name }}</span>
                <p>First Line <br>
                   Second Line
                </p>

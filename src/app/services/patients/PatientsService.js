@@ -28,7 +28,7 @@
 			var limit = 5;
 			var query = "";
 
-			$http.get(APP_SETTINGS.API_URL+'/v1/patients/clinic').success(function(data) {
+			$http.get(APP_SETTINGS.API_URL+'/v1/patients/clinic/21').success(function(data) {
 				retorno.resolve(data);
 			})
 			.error(function() {
@@ -38,14 +38,17 @@
 			return retorno.promise;
 		}
 
-		function getSelected() {
+		function returnPerId(id){
 
 		}
 
-		function watchDiscipline(){
+		function create(patient){
 
 		}
 
+		function edit(id){
+
+		}
 
 	}
 
