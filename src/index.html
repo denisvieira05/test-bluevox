@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control: max-age=3600, must-revalidate"/>
+
+    <!-- Favicon -->
+    <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"/> -->
+    <title>BlueDental - Pacientes</title>
+    <meta name="description" content="">
+    <!-- SEO -->
+    <!-- Código do Schema.org também para o Google+ -->
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="">
+    <!--Open Graph-->
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="BlueDental | Pacientes">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:image:type" content="">
+    <meta property="og:image:width" content="">
+    <meta property="og:image:height" content="">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link href="lib/Materialize/dist/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body ng-app="blueDental">
+
+    <div class="navbar-fixed">
+      <nav class="white darken-4">
+        <div class="nav-wrapper container">
+          <a ng-href="#/" class="brand-logo"><img src="assets/img/logo_.png" style="width: 3.5em;padding-top: 8%;" alt=""></a>
+          <ul class="right hide-on-med-and-down">
+              <li><a ng-href="#/" class="black-text">HOME</a></li>
+              <li><a href="https://github.com/fromdenisvieira/test-bluevox" target="_blank"><i class="fa fa-github black-text"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="main" ui-view></div>
+
+    <script src="./lib/angular/angular.min.js"></script>
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script src="./lib/Materialize/dist/js/materialize.min.js"></script>
+    <script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- <script src="./lib/angular-filter/dist/angular-filter.min.js"></script> -->
+    <!-- <script src="./lib/angular-local-storage/dist/angular-local-storage.min.js"></script> -->
+
+    <script src="app/app.js"></script>
+    <script src="app/config.js"></script>
+    <!-- <script src="app/init.js"></script> -->
+
+    <script src="app/services/patients/PatientsService.js"></script>
+
+    <script src="app/modules/dashboard/module.js"></script>
+    <script src="app/modules/dashboard/controllers/DashboardRetrieveCtrl.js"></script>
+
+
+</body>
+</html>

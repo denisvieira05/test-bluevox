@@ -1,0 +1,19 @@
+{
+  "name": "test-bluevox",
+  "version": "1.0.0",
+  "description": "Test for work in company .",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fromdenisvieira/test-bluevox.git"
+  },
+  "author": "Denis Vieira <denisvieira05@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fromdenisvieira/test-bluevox/issues"
+  },
+  "homepage": "https://github.com/fromdenisvieira/test-bluevox#readme"
+}
