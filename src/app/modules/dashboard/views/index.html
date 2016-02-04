@@ -17,8 +17,9 @@
 
             <ul class="collapsible popout z-depth-5" data-collapsible="accordion" watch>
                 <li class="hoverable" ng-repeat="patient in vm.patients | filter:searchText" >
-                    <div class="collapsible-header valign-wrapper" >
-                      <img ng-src="{{patient.image_profile}}" alt="" class="circle" style="width:3em;margin-top:0.7em;">
+                    <div class="collapsible-header valign-wrapper" style="padding:0.5em;padding-left:1.5em;
+}">
+                      <img ng-src="{{patient.image_profile}}" alt="" class="circle" style="width:2em;margin-bottom:-.5em;margin-right: 0.5em;">
                       <span style="line-height: 50%;">{{ patient.name | uppercase}}</span>
 
                     </div>

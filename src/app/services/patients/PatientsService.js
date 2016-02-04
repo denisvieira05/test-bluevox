@@ -39,7 +39,21 @@
 			return retorno.promise;
 		}
 
-		function returnPerId(id){
+		function getPatient(id){
+
+				var retorno = $q.defer();
+
+				var limit = 5;
+				var query = "";
+
+				$http.get(APP_SETTINGS.API_URL+'/v1/patients/21').success(function(data) {
+					retorno.resolve(data);
+				})
+				.error(function() {
+					alert("Aconteceu algo ruim! Verifique sua conexão de internet");
+				});
+
+				return retorno.promise;
 
 		}
 
