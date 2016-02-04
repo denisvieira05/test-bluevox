@@ -14,7 +14,8 @@
 	    var primePromise;
 
 	    var service = {
-	        listar: listar
+	        listar: listar,
+					create: create
 	    };
 
 	    return service;
@@ -44,6 +45,29 @@
 
 		function create(patient){
 
+				var retorno = $q.defer();
+
+				var patientToJson = function (){
+
+						return angular.toJson({
+						  "name": patient.name,
+						  "agreement_id": 17,
+						  "phone": patient.phone,
+						  "cell_phone": patient.cell_phone,
+						  "email": patient.email
+						});
+				};
+
+				$http.post(APP_SETTINGS.API_URL+'/v1/patients', patientToJson())
+				.success(function(result) {
+						retorno.resolve(result);
+						console.log(result);
+				})
+				.error(function() {
+					alert("Aconteceu algo ruim! Verifique sua conexão de internet");
+				});
+
+				return retorno.promise;
 		}
 
 		function edit(id){
