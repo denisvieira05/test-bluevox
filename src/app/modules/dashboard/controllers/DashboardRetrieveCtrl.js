@@ -11,6 +11,7 @@
         vm.disciplines = [];
         vm.selectedDisciplines = [];
 
+         $('.collapsible').collapsible({});
 
         // vm.checkall = checkAll;
         // vm.getGrid = getGrid;
