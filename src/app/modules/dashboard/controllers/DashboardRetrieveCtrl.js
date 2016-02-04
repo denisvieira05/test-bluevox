@@ -12,8 +12,9 @@
         vm.selectedDisciplines = [];
 
          $('.collapsible').collapsible({});
+         $('.modal-trigger').leanModal({});
 
-        // vm.checkall = checkAll;
+        vm.createPatient = createPatient;
         // vm.getGrid = getGrid;
 
         activate();
@@ -27,6 +28,17 @@
         // vm.disciplines = DisciplinesPrepService.disciplinas;
         // console.log(vm.disciplines);
         //////////////////////////////////////////////////////////
+
+        function createPatient(patient){
+          console.log(patient);
+            return PatientsService.create(patient).then(function(data){
+                console.log(patient);
+                vm.patients.push(patient);
+            },
+            function(){
+                alert('erro');
+            });
+        }
 
        function getPatients(){
             return PatientsService.listar().then(function(data){
