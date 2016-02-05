@@ -24,7 +24,7 @@
 
        function getPatient(id){
             return PatientsService.getPatient(id).then(function(data){
-                vm.patientAgreements = data;
+                vm.patientAgreements = data.agreements;
                 console.log("PACIENTE :"+id+" - ",vm.patientAgreements);
                 return vm.patientAgreements;
             },

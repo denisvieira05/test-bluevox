@@ -12,6 +12,16 @@
 
         vm.getPatient = getPatient;
 
+        vm.showHistoric = false;
+
+        vm.checkHistoric = function(){
+            if(vm.showHistoric){
+              vm.showHistoric = false;
+            }else {
+              vm.showHistoric = true;
+            }
+        };
+
         activate();
 
         function activate() {

@@ -1,6 +1,6 @@
 #Test for work in company .
 
-CRUD using patients API of the [BlueDental Software](https://www.bluedental.com.br/) .
+CRUD using patients API mock of the [BlueDental Software](https://www.bluedental.com.br/) .
 
 > ## [View Live Demo](http://test-bluevox.herokuapp.com/)
 

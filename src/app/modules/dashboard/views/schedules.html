@@ -1,3 +1,55 @@
 <hr/>
 
-<h1>HORÁRIOS</h1>
+<div class="container">
+    <div class="row">
+      <table class="centered highlight">
+        <thead>
+          <tr class="center">
+              <th>Agendamentos</th>
+          </tr>
+          <tr>
+              <th>Data</th>
+              <th>Hora</th>
+              <th>Dentista</th>
+              <th>Tipo</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="futureSchedule in vm.patientSchedules.future_schedules">
+            <td>{{ futureSchedule.date }}</td>
+            <td>{{ futureSchedule.hour }}</td>
+            <td>{{ futureSchedule.dentist }}</td>
+            <td>{{ futureSchedule.type }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </br>
+      <div class="row center-align">
+        <button class="waves-effect waves-light btn" ng-click="vm.checkHistoric()"><i class="material-icons left">playlist_add</i>Ver Histórico</button>
+      </div>
+    </div>
+    <div class="row" ng-show="vm.showHistoric">
+      <table class="centered highlight">
+        <thead>
+          <tr >
+              <th class="center">Histórico</th>
+          </tr>
+          <tr>
+              <th>Data</th>
+              <th>Hora</th>
+              <th>Dentista</th>
+              <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="lastSchedule in vm.patientSchedules.last_schedules">
+            <td>{{ lastSchedule.date }}</td>
+            <td>{{ lastSchedule.hour }}</td>
+            <td>{{ lastSchedule.dentist }}</td>
+            <td>{{ lastSchedule.type }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
