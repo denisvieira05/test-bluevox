@@ -2,10 +2,10 @@
   "name": "test-bluevox",
   "version": "1.0.0",
   "description": "Test for work in company .",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,9 @@
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.1.1",
     "gulp-uglify": "^1.5.1"
+  },
+  "dependencies": {
+    "bower": "^1.7.7",
+    "express": "^4.13.4"
   }
 }
