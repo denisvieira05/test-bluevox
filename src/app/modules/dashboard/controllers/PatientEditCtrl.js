@@ -41,7 +41,7 @@
        function getPatient(id){
             return PatientsService.getPatient(id).then(function(data){
                 vm.patientEdit = data;
-                // console.log("PACIENTE :"+id+" - ",vm.patientEdit);
+                console.log("PACIENTE :"+id+" - ",vm.patientEdit);
                 return vm.patientEdit;
             },
             function(){

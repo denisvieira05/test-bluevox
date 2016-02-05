@@ -1,3 +1,55 @@
 <hr/>
 
-<h1>PAGAMENTOS</h1>
+<div class="container">
+    <div class="row">
+      <table class="centered highlight">
+        <thead>
+          <tr class="center">
+              <th>Pagamentos Pendentes</th>
+          </tr>
+          <tr>
+              <th>Descrição</th>
+              <th>Vencimento</th>
+              <th>Pago em</th>
+              <th>Valor Total</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="pendingInvoice in vm.patientInvoices.pending_invoices">
+            <td>{{ pendingInvoice.description }}</td>
+            <td>{{ pendingInvoice.due_date }}</td>
+            <td>{{ pendingInvoice.paid_at }}</td>
+            <td>{{ pendingInvoice.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </br>
+      <div class="row center-align">
+        <button class="waves-effect waves-light btn" ng-click="vm.checkHistoric()"><i class="material-icons left">playlist_add</i>Ver Histórico</button>
+      </div>
+    </div>
+    <div class="row" ng-show="vm.showHistoric">
+      <table class="centered highlight">
+        <thead>
+          <tr >
+              <th class="center">Histórico</th>
+          </tr>
+          <tr>
+              <th>Descrição</th>
+              <th>Vencimento</th>
+              <th>Pago em</th>
+              <th>Valor Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="paidInvoice in vm.patientInvoices.paid_invoices">
+            <td>{{ paidInvoice.description }}</td>
+            <td>{{ paidInvoice.due_date }}</td>
+            <td>{{ paidInvoice.paid_at }}</td>
+            <td>{{ paidInvoice.total }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
