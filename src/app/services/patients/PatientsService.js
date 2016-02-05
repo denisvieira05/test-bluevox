@@ -15,7 +15,9 @@
 
 	    var service = {
 	        listar: listar,
-					create: create
+					create: create,
+					getPatient: getPatient,
+					edit: edit
 	    };
 
 	    return service;
@@ -39,7 +41,21 @@
 			return retorno.promise;
 		}
 
-		function returnPerId(id){
+		function getPatient(id){
+
+				var retorno = $q.defer();
+
+				var limit = 5;
+				var query = "";
+
+				$http.get(APP_SETTINGS.API_URL+'/v1/patients/'+id).success(function(data) {
+					retorno.resolve(data);
+				})
+				.error(function() {
+					alert("Aconteceu algo ruim! Verifique sua conexão de internet");
+				});
+
+				return retorno.promise;
 
 		}
 
@@ -70,7 +86,37 @@
 				return retorno.promise;
 		}
 
-		function edit(id){
+		function edit(patient){
+
+				var retorno = $q.defer();
+
+				var patientToJson = function (){
+
+						return angular.toJson({
+							"id": 23,
+							"name": patient.name,
+							"agreement_id": 17,
+							"phone": patient.phone,
+							"cell_phone": patient.cell_phone,
+							"email": patient.email
+						});
+				};
+
+				$http.put(APP_SETTINGS.API_URL+'/23', patientToJson())
+				.success(function(result) {
+					console.log("Paciente Modificado com Sucesso !");
+					alert("sometext");
+					$location.path('/dashboard');
+
+
+					retorno.resolve(result);
+				})
+				.error(function() {
+
+					alert("Aconteceu algo ruim! Verifique sua conexão de internet");
+				});
+
+				return retorno.promise;
 
 		}
 
