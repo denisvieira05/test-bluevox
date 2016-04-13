@@ -1,5 +1,8 @@
-(function(){
-        angular.module('blueDental', [
+(define([
+    'angularAMD',
+    'angular-ui-router'
+], function (angularAMD) {
+    var app =   angular.module('blueDental', [
 
         // App Components
 
@@ -8,10 +11,14 @@
 
         // External Dependencies
         'ui.router'
-    ])
-    .config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
+    ]);
+
+    app.config(['$stateProvider','$urlRouterProvider',function($stateProvider, $urlRouterProvider) {
 
           $urlRouterProvider.otherwise("/");
 
     }]);
+
+    angularAMD.bootstrap(app);
+    return app;
 })();
